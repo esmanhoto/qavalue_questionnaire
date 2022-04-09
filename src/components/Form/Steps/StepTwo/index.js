@@ -1,18 +1,48 @@
+import { useContext, useEffect, useRef, useState } from "react";
+import FormContext from "../../context";
+import { Container } from "../styles";
+
 const StepTwo = () => {
+  const { answers, setAnswerHandler, step, setStepHandler } =
+    useContext(FormContext);
+
+  const inputValue = useRef();
+
+  const onPrev = () => {
+    setStepHandler(1);
+  };
+
+  const onNext = () => {
+    setStepHandler(3);
+    setAnswerHandler("stepTwo", inputValue.current.value);
+  };
+
+  useEffect(() => {
+    inputValue.current.value = answers?.stepTwo ? answers?.stepTwo : "";
+  }, [answers?.stepTwo]);
+
   return (
-    <div>
+    <Container active={step === 2}>
       <p>Question 02</p>
       <p>text</p>
-      <select name="select">
-        <option value="">Select an option</option>
-        <option value="Javascript">Javascript</option>
-        <option value="Python">Python</option>
-        <option value="C++">C++</option>
+      <select name="select" ref={inputValue}>
+        <option value="" ref={inputValue}>
+          Select an option
+        </option>
+        <option value="Javascript" ref={inputValue}>
+          Javascript
+        </option>
+        <option value="Python" ref={inputValue}>
+          Python
+        </option>
+        <option value="C++" ref={inputValue}>
+          C++
+        </option>
       </select>
-      <button>Previous</button>
-      <button>Next</button>
+      <button onClick={onPrev}>Previous</button>
+      <button onClick={onNext}>Next</button>
       <p>error</p>
-    </div>
+    </Container>
   );
 };
 
