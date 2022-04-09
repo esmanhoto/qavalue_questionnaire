@@ -15,9 +15,8 @@ export const Theme = styled.div`
   color: ${({ theme }) => theme.textColor};
   font-size: 11px;
   letter-spacing: 1.4px;
-
-  /* justify-content: flex-end; */
-  /* margin-top: auto; */
+  justify-content: flex-end;
+  margin-top: auto;
   & p {
     margin-right: 10px;
     color: inherit;
@@ -30,12 +29,13 @@ export const Theme = styled.div`
     border-radius: 5px;
     border: none;
     box-shadow: 0px 1px 7px 2px #fca00042;
-    /* background: #333; */
-    background: ${({ theme }) => theme.secondaryColor};
-    color: ${({ theme }) => theme.textColor};
+    /* background: ${({ theme }) => theme.secondaryColor}; */
+    background-color: #171e19;
+    color: #fff;
+    &:last-child {
+      background-color: #c3baae;
+      color: #171e19;
+      font-weight: bold;
+    }
   }
-  /* & button:last-child {
-    background: rgb(224, 224, 224);
-    color: #171e19;
-  } */
 `;
