@@ -24,7 +24,7 @@ const Summary = () => {
           Congratulations <span>{answers?.stepOne}!</span>
         </p>
         <p>
-          From this quick questionnaire learned you are able to use{" "}
+          From this quick questionnaire we have learned you are able to use{" "}
           <span name="stepOneAnswer">{answers?.stepTwo}</span>. Furthermore, you
           guessed{" "}
           <span>{answers?.stepThree === "React" ? "right" : "wrong"}</span>, the
