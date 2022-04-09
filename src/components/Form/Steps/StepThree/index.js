@@ -1,6 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import FormContext from "../../context";
-import { Container, ErrorMessage, QuestionNumber, QuestionTitle, Button } from "../styles";
+import {
+  Container,
+  ErrorMessage,
+  QuestionNumber,
+  QuestionTitle,
+  Button,
+} from "../styles";
+import { Label, RadioInput, RadioOptions } from "./styles";
 
 const StepThree = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
@@ -41,9 +48,11 @@ const StepThree = () => {
   return (
     <Container active={step === 3}>
       <QuestionNumber>Question 03</QuestionNumber>
-      <QuestionTitle>text</QuestionTitle>
-      <div>
-        <input
+      <QuestionTitle>
+        Which framework do you think was used to create this questionnaire?
+      </QuestionTitle>
+      <RadioOptions>
+        <RadioInput
           onChange={handleCheck()}
           type="radio"
           id="react"
@@ -51,8 +60,8 @@ const StepThree = () => {
           value="React"
           checked={checked === "React"}
         />
-        <label htmlFor="react">React</label>
-        <input
+        <Label htmlFor="react">React</Label>
+        <RadioInput
           onChange={handleCheck()}
           type="radio"
           id="Angular"
@@ -60,8 +69,8 @@ const StepThree = () => {
           value="Angular"
           checked={checked === "Angular"}
         />
-        <label htmlFor="Angular">Angular</label>
-        <input
+        <Label htmlFor="Angular">Angular</Label>
+        <RadioInput
           onChange={handleCheck()}
           type="radio"
           id="vue"
@@ -69,8 +78,8 @@ const StepThree = () => {
           value="Vue"
           checked={checked === "Vue"}
         />
-        <label htmlFor="vue">Vue</label>
-      </div>
+        <Label htmlFor="vue">Vue</Label>
+      </RadioOptions>
       <Button onClick={onPrev}>Previous</Button>
       <Button onClick={onSubmit}>Submit</Button>
       {error ? <ErrorMessage>{error}</ErrorMessage> : ""}

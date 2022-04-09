@@ -7,6 +7,7 @@ import {
   QuestionNumber,
   QuestionTitle,
 } from "../styles";
+import { SelectInput, SelectOptions } from "./styles";
 
 const StepTwo = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
@@ -41,21 +42,23 @@ const StepTwo = () => {
   return (
     <Container active={step === 2}>
       <QuestionNumber>Question 02</QuestionNumber>
-      <QuestionTitle>text</QuestionTitle>
-      <select name="select" ref={inputValue}>
-        <option value="" ref={inputValue}>
+      <QuestionTitle>
+        Which programming language do you consider as most valuable nowadays?
+      </QuestionTitle>
+      <SelectInput name="select" ref={inputValue}>
+        <SelectOptions value="" ref={inputValue}>
           Select an option
-        </option>
-        <option value="Javascript" ref={inputValue}>
+        </SelectOptions>
+        <SelectOptions value="Javascript" ref={inputValue}>
           Javascript
-        </option>
-        <option value="Python" ref={inputValue}>
+        </SelectOptions>
+        <SelectOptions value="Python" ref={inputValue}>
           Python
-        </option>
-        <option value="C++" ref={inputValue}>
+        </SelectOptions>
+        <SelectOptions value="C++" ref={inputValue}>
           C++
-        </option>
-      </select>
+        </SelectOptions>
+      </SelectInput>
       <Button onClick={onPrev}>Previous</Button>
       <Button onClick={onNext}>Next</Button>
       {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
