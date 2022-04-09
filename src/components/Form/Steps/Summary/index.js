@@ -16,10 +16,6 @@ const Summary = () => {
     setAnswerHandler("clear");
   };
 
-  useEffect(() => {
-    console.log("answers: ", answers);
-  }, [answers]);
-
   return (
     <Container active={step === 4}>
       <QuestionNumber>Summary</QuestionNumber>

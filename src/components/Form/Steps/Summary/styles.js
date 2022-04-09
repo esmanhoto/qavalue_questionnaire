@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SummaryText = styled.p`
+export const SummaryText = styled.div`
   font-size: 15px;
   color: ${({ theme }) => theme.textColor};
   line-height: 1.5;

@@ -33,7 +33,6 @@ const StepThree = () => {
       setError("You must choose an option!");
     } else {
       setStepHandler(4);
-      console.log("inputValue.current.checked: ", checked);
       setAnswerHandler("stepThree", checked);
       setError("");
     }

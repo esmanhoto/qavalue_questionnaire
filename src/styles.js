@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Theme = styled.div`
   position: absolute;
   top: 91%;
-  left: 55%;
+  left: 52%;
   display: flex;
   flex-direction: row;
   align-items: center;
