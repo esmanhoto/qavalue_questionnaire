@@ -1,11 +1,12 @@
-import "./App.css";
 import Form from "./components/Form";
+import { Container } from "./styles";
 
 function App() {
   return (
     <>
-      <div>Questionnaire</div>
-      <Form />
+      <Container>
+        <Form />
+      </Container>
     </>
   );
 }

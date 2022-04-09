@@ -3,16 +3,17 @@ import StepOne from "./Steps/StepOne";
 import StepTwo from "./Steps/StepTwo";
 import StepThree from "./Steps/StepThree";
 import Summary from "./Steps/Summary";
+import { Container } from "./styles";
 
 const Form = () => {
   return (
     <FormContextProvider>
-      <div>
+      <Container>
         <StepOne />
         <StepTwo />
         <StepThree />
         <Summary />
-      </div>
+      </Container>
     </FormContextProvider>
   );
 };

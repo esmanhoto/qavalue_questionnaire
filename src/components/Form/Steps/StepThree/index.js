@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import FormContext from "../../context";
-import { Container } from "../styles";
+import { Container, ErrorMessage, QuestionNumber, QuestionTitle, Button } from "../styles";
 
 const StepThree = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
@@ -40,8 +40,8 @@ const StepThree = () => {
 
   return (
     <Container active={step === 3}>
-      <p>Question 03</p>
-      <p>text</p>
+      <QuestionNumber>Question 03</QuestionNumber>
+      <QuestionTitle>text</QuestionTitle>
       <div>
         <input
           onChange={handleCheck()}
@@ -71,9 +71,9 @@ const StepThree = () => {
         />
         <label htmlFor="vue">Vue</label>
       </div>
-      <button onClick={onPrev}>Previous</button>
-      <button onClick={onSubmit}>Submit</button>
-      {error ? <p>{error}</p> : ""}
+      <Button onClick={onPrev}>Previous</Button>
+      <Button onClick={onSubmit}>Submit</Button>
+      {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
     </Container>
   );
 };

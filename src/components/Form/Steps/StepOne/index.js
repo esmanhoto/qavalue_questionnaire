@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import FormContext from "../../context";
-import { Container } from "../styles";
+import { Button, Container, ErrorMessage, QuestionNumber, QuestionTitle } from "../styles";
 
 const StepOne = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
@@ -30,11 +30,11 @@ const StepOne = () => {
 
   return (
     <Container active={step === 1}>
-      <p>Question 01</p>
-      <p>What is your full name?</p>
+      <QuestionNumber>Question 01</QuestionNumber>
+      <QuestionTitle>What is your full name?</QuestionTitle>
       <input type="text" ref={inputValue} />
-      <button onClick={onNext}>Next</button>
-      {error ? <p>{error}</p> : ""}
+      <Button onClick={onNext}>Next</Button>
+      {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
     </Container>
   );
 };

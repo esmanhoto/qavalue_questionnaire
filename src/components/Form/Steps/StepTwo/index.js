@@ -1,6 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import FormContext from "../../context";
-import { Container } from "../styles";
+import {
+  Button,
+  Container,
+  ErrorMessage,
+  QuestionNumber,
+  QuestionTitle,
+} from "../styles";
 
 const StepTwo = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
@@ -34,8 +40,8 @@ const StepTwo = () => {
 
   return (
     <Container active={step === 2}>
-      <p>Question 02</p>
-      <p>text</p>
+      <QuestionNumber>Question 02</QuestionNumber>
+      <QuestionTitle>text</QuestionTitle>
       <select name="select" ref={inputValue}>
         <option value="" ref={inputValue}>
           Select an option
@@ -50,9 +56,9 @@ const StepTwo = () => {
           C++
         </option>
       </select>
-      <button onClick={onPrev}>Previous</button>
-      <button onClick={onNext}>Next</button>
-      {error ? <p>{error}</p> : ""}
+      <Button onClick={onPrev}>Previous</Button>
+      <Button onClick={onNext}>Next</Button>
+      {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
     </Container>
   );
 };
