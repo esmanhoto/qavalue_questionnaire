@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 450px;
   width: 400px;
-  background: ${({ theme }) => theme.background};  
+  background: ${({ theme }) => theme.background};
   margin: 50px auto;
   padding: 25px;
   border-radius: 10px;
@@ -16,4 +16,5 @@ export const Container = styled.div`
     width: 200px;
     margin-top: 20px;
     margin-bottom: 30px;
+  }
 `;
