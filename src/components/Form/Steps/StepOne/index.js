@@ -7,10 +7,21 @@ const StepOne = () => {
     useContext(FormContext);
 
   const inputValue = useRef("default");
+  const [error, setError] = useState("");
+
+  //   const onNext = () => {
+  //     setStepHandler(2);
+  //     setAnswerHandler("stepOne", inputValue.current.value);
+  //   };
 
   const onNext = () => {
-    setStepHandler(2);
-    setAnswerHandler("stepOne", inputValue.current.value);
+    if (inputValue.current.value.length < 4) {
+      setError("Write at least 4 characters!");
+    } else {
+      setStepHandler(2);
+      setAnswerHandler("stepOne", inputValue.current.value);
+      setError("");
+    }
   };
 
   useEffect(() => {
@@ -23,7 +34,7 @@ const StepOne = () => {
       <p>What is your full name?</p>
       <input type="text" ref={inputValue} />
       <button onClick={onNext}>Next</button>
-      <p>error</p>
+      {error ? <p>{error}</p> : ""}
     </Container>
   );
 };

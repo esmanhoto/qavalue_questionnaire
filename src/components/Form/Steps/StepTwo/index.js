@@ -7,14 +7,25 @@ const StepTwo = () => {
     useContext(FormContext);
 
   const inputValue = useRef();
+  const [error, setError] = useState("");
 
   const onPrev = () => {
     setStepHandler(1);
   };
 
+  //   const onNext = () => {
+  //     setStepHandler(3);
+  //     setAnswerHandler("stepTwo", inputValue.current.value);
+  //   };
+
   const onNext = () => {
-    setStepHandler(3);
-    setAnswerHandler("stepTwo", inputValue.current.value);
+    if (inputValue.current.value === "") {
+      setError("You must choose an option");
+    } else {
+      setStepHandler(3);
+      setAnswerHandler("stepTwo", inputValue.current.value);
+      setError("");
+    }
   };
 
   useEffect(() => {
@@ -41,7 +52,7 @@ const StepTwo = () => {
       </select>
       <button onClick={onPrev}>Previous</button>
       <button onClick={onNext}>Next</button>
-      <p>error</p>
+      {error ? <p>{error}</p> : ""}
     </Container>
   );
 };

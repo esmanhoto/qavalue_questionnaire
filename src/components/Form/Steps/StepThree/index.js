@@ -6,6 +6,7 @@ const StepThree = () => {
   const { answers, setAnswerHandler, step, setStepHandler } =
     useContext(FormContext);
   const [checked, setChecked] = useState();
+  const [error, setError] = useState("");
 
   const handleCheck = () => (e) => {
     setChecked(e.currentTarget.value);
@@ -15,9 +16,20 @@ const StepThree = () => {
     setStepHandler(2);
   };
 
+  //   const onSubmit = () => {
+  //     setStepHandler(4);
+  //     setAnswerHandler("stepThree", checked);
+  //   };
+
   const onSubmit = () => {
-    setStepHandler(4);
-    setAnswerHandler("stepThree", checked);
+    if (checked === null) {
+      setError("You must choose an option!");
+    } else {
+      setStepHandler(4);
+      console.log("inputValue.current.checked: ", checked);
+      setAnswerHandler("stepThree", checked);
+      setError("");
+    }
   };
 
   useEffect(() => {
@@ -61,7 +73,7 @@ const StepThree = () => {
       </div>
       <button onClick={onPrev}>Previous</button>
       <button onClick={onSubmit}>Submit</button>
-      <p>error</p>
+      {error ? <p>{error}</p> : ""}
     </Container>
   );
 };
