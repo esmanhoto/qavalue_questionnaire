@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 450px;
   width: 400px;
-  background: rgba(0, 0, 0, 0.1);
+  background: ${({ theme }) => theme.background};  
   margin: 50px auto;
   padding: 25px;
   border-radius: 10px;

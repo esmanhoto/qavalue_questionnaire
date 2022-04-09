@@ -12,6 +12,7 @@ export const RadioOptions = styled.div`
 `;
 
 export const Label = styled.label`
+  color: ${({ theme }) => theme.textColor};
   margin: 2px 20px 0 5px;
   font-weight: 600;
 `;
