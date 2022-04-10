@@ -22,8 +22,8 @@ const StepOne = () => {
   //   };
 
   const onNext = () => {
-    if (inputValue.current.value.length < 4) {
-      setError("Write at least 4 characters!");
+    if (inputValue.current.value.length < 2) {
+      setError("Write at least 2 characters!");
     } else {
       setStepHandler(2);
       setAnswerHandler("stepOne", inputValue.current.value);
@@ -38,7 +38,7 @@ const StepOne = () => {
   return (
     <Container active={step === 1}>
       <QuestionNumber>Question 01</QuestionNumber>
-      <QuestionTitle>What is your full name?</QuestionTitle>
+      <QuestionTitle>What is your name?</QuestionTitle>
       <Input type="text" ref={inputValue} />
       <Button onClick={onNext}>Next</Button>
       {error ? <ErrorMessage>{error}</ErrorMessage> : ""}

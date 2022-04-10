@@ -28,7 +28,7 @@ test("error message in question 01", async () => {
     screen.queryByText("Write at least 4 characters!")
   ).not.toBeInTheDocument();
   clickButton("Next");
-  expect(await screen.findByText("Write at least 4 characters!")).toBeVisible();
+  expect(await screen.findByText("Write at least 2 characters!")).toBeVisible();
 });
 
 test("Question 01 next button", async () => {
