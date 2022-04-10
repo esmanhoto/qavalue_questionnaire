@@ -1,6 +1,6 @@
 # QAValue's challenge - Questionnaire
 
-!(/src/assets/questionnaire_img.png)
+![](/src/assets/questionnaire_img.png)
 
 # Cloning this project
 
@@ -42,4 +42,4 @@ Launches the test runner in the interactive watch mode.\
 
 # Heroku deploy
 
-In order to facilitate running this application, it was also deployed on heroku. It is available on the link [https://qavalue-questionnaire.herokuapp.com/] (https://qavalue-questionnaire.herokuapp.com/).
+In order to facilitate running this application, it was also deployed on heroku. It is available on the link [https://qavalue-questionnaire.herokuapp.com/](https://qavalue-questionnaire.herokuapp.com/).
